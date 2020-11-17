@@ -5,17 +5,14 @@ import { Card, Accordion, Button } from "react-bootstrap";
 
 function SearchContent({ fetchSearch }) {
   const [searchValues, setSearchValues] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const searchContent = (e) => {
-    setLoading(true);
     const searchValue = e.target.value.toLowerCase();
     async function fetchData() {
       const request = await axios.get(`${fetchSearch}&q=${searchValue}`);
       if (request) {
         setSearchValues(request.data);
       }
-      setLoading(false);
     }
     fetchData();
   };
@@ -66,14 +63,6 @@ function SearchContent({ fetchSearch }) {
           </Card>
         </Accordion>
       ))}
-
-      {loading && (
-        <div class='searchContent__loading'>
-          <div class='ball'></div>
-          <div class='ball'></div>
-          <div class='ball'></div>
-        </div>
-      )}
     </div>
   );
 }

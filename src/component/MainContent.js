@@ -27,7 +27,7 @@ function MainContent({ fetchUrl }) {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
 
     if (scrollHeight - scrollTop === clientHeight) {
-      setLimits(limits + 5);
+      setLimits(limits + 10);
       loadContent();
     }
   };
