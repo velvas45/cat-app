@@ -1,0 +1,16 @@
+.header > nav {
+  display: flex;
+  justify-content: center;
+  background-color: mediumspringgreen !important;
+}
+
+.header > nav > span {
+  display: flex;
+  align-items: center;
+  font-size: 2.2rem;
+  color: #fff !important;
+}
+
+.header > nav > span > img {
+  margin-right: 10px;
+}
